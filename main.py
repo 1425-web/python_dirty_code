@@ -1,3 +1,4 @@
+import file_tools
 print("Привет! Это плохо написанная программа.")
 name = input("Введите ваше имя: ")
 print(f"Привет, {name}!")
@@ -5,15 +6,10 @@ print(f"Привет, {name}!")
 filename = "sample.txt"
 try:
     with open(filename, 'r') as file:
-        content = file.read()
-        words = content.split()
-        print(f"Количество слов в файле: {len(words)}")
-        sentences = content.split('.')
-        print(f"Количество предложений в файле: {len(sentences)}")
-        word_count = {}
-        for word in words:
-            word_count[word] = word_count.get(word, 0) + 1
-        sorted_words = sorted(word_count.items(), key=lambda x: x[1], reverse=True)
-        print(f"Самые часто встречающиеся слова: {sorted_words[:5]}")
+        print(f"Количество слов в файле: {file_tools.count_words(filename)}")
+        print(f"Количество предложений в файле: {file_tools.count_sentences(filename)}")
+        print(f"Самые часто встречающиеся слова: {file_tools.sort_words(filename)}")
+        print(f"Количество гласных букв: {file_tools.count_vowels(filename)}")
+        print(f"Количество согласных букв: {file_tools.count_consonants(filename)}")
 except FileNotFoundError:
     print(f"Файл '{filename}' не найден.")
