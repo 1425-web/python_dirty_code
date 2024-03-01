@@ -1,24 +1,3 @@
-print("Привет! Это плохо написанная программа.")
-name = input("Введите ваше имя: ")
-print(f"Привет, {name}!")
-
-filename = "sample.txt"
-try:
-    with open(filename, 'r') as file:
-        content = file.read()
-        words = content.split()
-        print(f"Количество слов в файле: {len(words)}")
-        sentences = content.split('.')
-        print(f"Количество предложений в файле: {len(sentences)}")
-        word_count = {}
-        for word in words:
-            word_count[word] = word_count.get(word, 0) + 1
-        sorted_words = sorted(word_count.items(),
-                              key=lambda x: x[1], reverse=True)
-        print(f"Самые часто встречающиеся слова: {sorted_words[:5]}")
-except FileNotFoundError:
-    print(f"Файл '{filename}' не найден.")
-
 
 def get_txt(filename):
     content = ''
@@ -34,11 +13,40 @@ def split(str):
 class filee:
     content = ''
     words = []
+    sentences = []
+    word_count = {}
+    sorted_words = []
 
     def __init__(self, filename):
         with open(filename, 'r') as file:
             self.content = file.read()
-            self.words = content.split()
+            self.words = self.content.split()
+            self.sentences = self.content.split('.')
+            for word in self.words:
+                self.word_count[word] = self.word_count.get(word, 0) + 1
+            self.sorted_words = sorted(
+                self.word_count.items(), key=lambda x: x[1], reverse=True)
 
-    def get_words():
-        return words
+    def get_words(self):
+        return self.words
+
+    def get_sentences(self):
+        return self.sentences
+
+    def get_word_count(self):
+        return self.word_count
+
+    def get_soretd_words(self):
+        return self.sorted_words
+
+    def set_words(self, s):
+        self.words = s
+
+    def set_sentences(self, s):
+        self.sentences = s
+
+    def set_word_count(self, s):
+        self.word_count = s
+
+    def set_soretd_words(self, s):
+        self.sorted_words = s
