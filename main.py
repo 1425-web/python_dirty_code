@@ -3,7 +3,12 @@ from workng_w_txt import workng_wth_text
 
 
 filename = input("Введите имя файла: ")
-text = workng_wth_text(txt_file(filename=filename).get_content())
+try:
+    a = txt_file(filename=filename).get_content()
+except FileNotFoundError:
+    print("Невозможно открыть файл")
+    quit()
+text = workng_wth_text(a)
 
 vowel_count, consonant_count = text.count_vowels_and_consonants()
 print(f"Количество слов: ", len(text.get_words()))
