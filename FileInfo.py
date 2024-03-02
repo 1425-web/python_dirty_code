@@ -11,17 +11,17 @@ class F_Info():
         self.consonants = consonants
 
 
-def Cnt_words(content):
+def cnt_words(content):
     """подсчёт слов"""
     return len(content.split())
 
 
-def Cnt_sentences(content):
+def cnt_sentences(content):
     """подсчёт предложений"""
     return len(content.split('.'))
 
 
-def Repeat_words(content):
+def repeat_words(content):
     """список часто повторяющихся слов"""
     words = content.split()
     word_count = {}
@@ -31,7 +31,7 @@ def Repeat_words(content):
     return sorted_words[:5]
 
 
-def Cnt_vowels(content):
+def cnt_vowels(content):
     """подсчёт гласных"""
     vowels = "eyuioaEYUIOA"
     cnt = 0
@@ -40,7 +40,7 @@ def Cnt_vowels(content):
     return cnt
 
 
-def Cnt_consonants(content):
+def cnt_consonants(content):
     """подсчёт согласных"""
     consonants = "qwrtpsdfghjklzxcvbnmQWRTPSDFGHJKLZXCVBNM"
     cnt = 0
