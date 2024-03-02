@@ -1,7 +1,8 @@
 class F_Info():
     """информация файла"""
 
-    def __init__(self, words, sentences, repeatWords, vowels, consonants):
+    def __init__(self, filename, words, sentences, repeatWords, vowels, consonants):
+        self.filename = filename
         self.words = words
         self.sentences = sentences
         self.repeatWords = repeatWords
@@ -35,6 +36,7 @@ def RepeatWords(filename):
 
 
 def Cnt_Vowels(filename):
+    """подсчёт гласных"""
     vowels = "eyuioaEYUIOA"
     cnt = 0
     with open(filename, 'r') as file:
@@ -45,6 +47,7 @@ def Cnt_Vowels(filename):
 
 
 def Cnt_Consonants(filename):
+    """подсчёт согласных"""
     consonants = "qwrtpsdfghjklzxcvbnmQWRTPSDFGHJKLZXCVBNM"
     cnt = 0
     with open(filename, 'r') as file:
