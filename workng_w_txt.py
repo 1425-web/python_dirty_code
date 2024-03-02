@@ -1,4 +1,4 @@
-from txt_file_w import txt_file
+
 class workng_wth_text:
 
     def count_vowels_and_consonants(self):
@@ -10,8 +10,8 @@ class workng_wth_text:
 
         return vowel_count, consonant_count
 
-    def __init__(self,txt_file: content):
-        self.content = content.get_content()
+    def __init__(self,content):
+        self.content = content
         
 
     def get_words(self):
