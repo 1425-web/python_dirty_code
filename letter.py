@@ -16,6 +16,4 @@ def letters_count(content):
             vowels_count += 1
         elif i in consonant:
             consonant_count += 1
-  
-    print("Vowels count: ", vowels_count)
-    print("Consonant count: ", consonant_count)
+    return [vowels_count, consonant_count]

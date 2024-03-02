@@ -1,15 +1,11 @@
-class nfile():
-    def __init__(self,filename):
-        try:
-            with open(filename, 'r') as file:
-                self.content = file.read().lower()
-                self.sentences = self.content.split('.')
-                self.words = self.content.split()
-        except FileNotFoundError:
-            print(f"Файл '{filename}' не найден.")
-    def get_content(self):
-        return self.content
+class work_with_text():
+    def __init__(self, content):
+        self.content = content
+        
     def get_sentences(self):
+        self.sentences = self.content.split('.')
         return self.sentences
+    
     def get_words(self):
+        self.words = self.content.split()
         return self.words
