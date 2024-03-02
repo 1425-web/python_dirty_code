@@ -14,7 +14,7 @@ class txt_file:
     def __init__(self, filename):
         try:
             with open(filename, 'r') as file:
-            self.content = file.read()
+                self.content = file.read()
         except FileNotFoundError:
             print("Невозможно открыть файл")
     def get_content(self):
