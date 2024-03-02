@@ -12,11 +12,9 @@ def split(str):
 
 class txt_file:
     def __init__(self, filename):
-        try:
-            with open(filename, 'r') as file:
-                self.content = file.read()
-        except FileNotFoundError:
-            print("Невозможно открыть файл")
+        with open(filename, 'r') as file:
+            self.content = file.read()
+
     def get_content(self):
         return self.content
    
