@@ -15,7 +15,7 @@ File1 = FileInfo.F_Info(filename, FileInfo.Cnt_words(content),
                         FileInfo.Cnt_sentences(content),
                         FileInfo.Repeat_words(content),
                         FileInfo.Cnt_vowels(content),
-                        FileInfo.Cnt_vonsonants(content))
+                        FileInfo.Cnt_consonants(content))
 print(f"Имя файла: {File1.filename}")
 print(f"Количество слов в файле: {File1.words}")
 print(f"Количество предложений в файле: {File1.sentences}")
