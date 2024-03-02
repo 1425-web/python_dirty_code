@@ -1,6 +1,7 @@
 import word
 import sentences
 import letter
+import file_class
 
 print("Привет! Это плохо написанная программа.")
 
@@ -9,13 +10,12 @@ print(f"Привет, {name}!")
 
 filename = "sample.txt"
 
-try:
-    with open(filename, 'r') as file:
-        
-        word.word_count(file)
-        sentences.sentence_count(file)
-        word.most_common(file)
-        letter.letters_count(file)
-        
-except FileNotFoundError:
-    print(f"Файл '{filename}' не найден.")
+file = file_class.nfile(filename)
+content = file.get_content()
+sentence = file.get_sentences()
+words = file.get_words()
+
+word.word_count(words)
+sentences.sentence_count(content, sentence)
+word.most_common(words)
+letter.letters_count(content)

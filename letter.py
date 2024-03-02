@@ -1,4 +1,4 @@
-def letters_count(file):
+def letters_count(content):
     
     # const
     vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы',
@@ -11,9 +11,7 @@ def letters_count(file):
     consonant_count = 0
     
     #main
-    content = file.read()
-    
-    for i in content:
+    for i in content.lower():
         if i in vowels:
             vowels_count += 1
         elif i in consonant:

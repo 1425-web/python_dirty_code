@@ -1,13 +1,9 @@
-def word_count(file):
-    content = file.read()
-    words = content.split()
+def word_count(words):
     print(f"Количество слов в файле: {len(words)}")
     
-def most_common(file):
-    content = file.read()
-    words = content.split()
-    word = {}
+def most_common(words):
+    word_c = {}
     for word in words:
-        word[word] = word.get(word, 0) + 1
-    sorted_words = sorted(word.items(), key=lambda x: x[1], reverse=True)
+        word_c[word] = word_c.get(word, 0) + 1
+    sorted_words = sorted(word_c.items(), key=lambda x: x[1], reverse=True)
     print(f"Самые часто встречающиеся слова: {sorted_words[:5]}")
